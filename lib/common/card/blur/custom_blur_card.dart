@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import '../../../constants/colors.dart';
 import '../../../constants/sizes.dart';
 import '../../image_network/custom_image_network.dart';
-import '../../padding/custom_padding.dart';
 
 class CustomBlurCard extends StatelessWidget {
   final String urlImageBackground;
@@ -58,15 +57,12 @@ class CustomBlurCard extends StatelessWidget {
                           end: Alignment.bottomCenter,
                           colors: [
                             Colors.transparent.withOpacity(0.1),
-                            MainColor.primarySpaceCadet.withOpacity(1.0),
+                            MainColor.primarySpaceCadet,
                           ],
                         ),
                       ),
                       alignment: Alignment.center,
-                      child: CustomPadding(
-                        typePadding: TypePadding.all,
-                        child: content,
-                      ),
+                      child: content,
                     ),
                   ),
                 ),

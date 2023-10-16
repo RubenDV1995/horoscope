@@ -3,28 +3,39 @@ const String lblTab1 = 'Sounds';
 const String lblTab2 = 'Voice';
 const String lblTab3 = 'Timer';
 const String lblTab4 = 'Modes';
-const String lblTab5 = 'Start';
-const String lblSettings = 'Settings';
-const String lblExit = 'Exit';
-const String lblTitleTermsConditions = 'Terms and conditions';
-const String lblNew = 'New';
-const String lnlRecommended = 'recommended';
-const String lblTitle = 'Title';
-const String lblNext = 'Next';
-const String lblTryAgain = 'Try Again';
-const String lblMinutes = 'Minutes';
-const String lblApply = 'Apply';
-const String lblCancel = 'Cancel';
-const String lblStop = 'Stop';
-const String lblUpdateApp = 'Update App';
-const String lblTitleUpdateApp = '¡Welcome to Sereni!';
-const String lblContentUpdateApp = 'We have released a new app update that includes exciting improvements and additional features';
+const String lblTab5 = 'Empezar';
+const String lblSettings = 'Ajustes';
+const String lblExit = 'Salir';
+const String lblTitleTermsConditions = 'Términos y condiciones';
+const String lblNew = 'Nuevo';
+const String lnlRecommended = 'Recomendada';
+const String lblTitle = 'Titulo';
+const String lblNext = 'Siguiente';
+const String lblTryAgain = 'Intentar otra vez';
+const String lblMinutes = 'Minutos';
+const String lblApply = 'Aplicar';
+const String lblCancel = 'Cancelar';
+const String lblStop = 'Detener';
+const String lblUpdateApp = 'Actualización disponible';
+const String lblUpdate = 'Actualizar';
+const String lblTitleUpdateApp = 'Bienvenido a';
+const String lblContentUpdateApp = 'te recomienda actualizar la app a la versión más reciente.';
 const String lblLaunchErrorTitle = 'Update failed';
-const String lblWithoutInternetTitle = 'oops! without Internet';
-const String lblWithoutInternetSubtitle = 'Please connect and try again.';
-const String lblSkip = 'Skip';
-const String lblDone = 'Done';
-const String lblProfile = 'Profile';
+const String lblWithoutInternetTitle = 'oops! sin internet';
+const String lblWithoutInternetSubtitle = 'Se requiere una conexión activa para continuar. \nPor favor, verifica tu conexión e inténtalo de nuevo.';
+const String lblSkip = 'Saltar';
+const String lblDone = 'Hecho';
+const String lblProfile = 'Perfil';
+const String lblNotData = 'Sin informacio';
+const String lblElement = 'Tu elemento';
+const String lblElements = 'Tus elementos';
+const String lblTips = 'Tus tips';
+const String lblSings = 'Tus signos';
+const String lblHoroscope = 'Tu Horoscopo';
+const String lblMore = 'Quiero saber mas';
+const String lblNews = 'Novedades';
+const String lblSingSet = 'tu signo preferido es ';
+
 
 ///FAILURE
 const String lblNotPlay = 'Not play error';
@@ -74,12 +85,13 @@ const String lblNotSingsFoundDescription = 'Not Sings Found';
 ///FIREBASE
 const String lblRemoteConfigAppConfig = 'app_config';
 const String lblRemoteConfigSings = 'sings_info';
+const String lblRemoteConfigElements = 'elements_info';
 
 ///INSTRUCTIONS
 const String lblInstructionModes = 'Choose the mode that best suits you and immerse yourself in an oasis of absolute tranquility';
 const String lblInstructionTimer = 'Choose from a list of predefined timers or create a custom one based on your desired duration.';
 const String lblInstructionVoices = 'Choose different meditations or remove the voice so you can enjoy the background sounds.';
-const String lblInstructionSings = 'Cambiar texto intrucciones lblInstructionSings';
+const String lblInstructionSings = 'Descubre lo que las estrellas tienen preparado para ti. ¡Elige tu signo y encuentra tu camino estelar!';
 
 ///ADS
 const String adUnitIdAndroid = 'ca-app-pub-2858479143442816~3536860373';

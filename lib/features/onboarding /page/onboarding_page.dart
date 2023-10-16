@@ -44,11 +44,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
   void _getOnboarding() async {
     final result = await _onboardingRepository.getOnboarding();
     result.when(
-      (failure) => {
-        print(
-          failure.toString(),
-        )
-      },
+      (_) => {},
       (onboarding) => {
         _onboardingController.setOnboarding(onboarding),
       },

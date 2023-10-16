@@ -1,12 +1,12 @@
 import 'dart:convert';
 
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:horoscopos/domian/models/failure_model.dart';
-import 'package:horoscopos/domian/models/sings_model.dart';
 import 'package:horoscopos/domian/repositories/sings_repository.dart';
 import 'package:horoscopos/utils/either/either.dart';
 
 import '../../utils/enums/failures.dart';
+import '../models/failure_model.dart';
+import '../models/sings_model.dart';
 import '../services/firebase/remote_config_service.dart';
 import 'failures_repository_impl.dart';
 
@@ -26,7 +26,7 @@ class SingsRepositoryImpl implements SingsRepository {
         _failureRepositoryImpl = failureRepositoryImpl;
 
   @override
-  Future<Either<FailuresModel, List<Sing>>> getSings() {
+  Future<Either<FailuresModel, List<Sing>>> getSings() async {
     final sings = _firebaseRemoteConfig.getEventSingsInfoJson();
     return sings.when(
       (failure) async => Either.left(
@@ -61,7 +61,7 @@ class SingsRepositoryImpl implements SingsRepository {
   }
 
   @override
-  Future<Either<FailuresModel, Sing>> get getSing async {
+  Future<Either<FailuresModel, Sing>> getSing() async {
     late Sing sing;
     try {
       final singString = await _flutterSecureStorage.containsKey(key: _keySing);
@@ -74,6 +74,7 @@ class SingsRepositoryImpl implements SingsRepository {
         );
       } else {
         ///Load list sings an set first
+        /*
         final sings = await getSings();
         sings.when(
           (failure) {
@@ -84,13 +85,20 @@ class SingsRepositoryImpl implements SingsRepository {
             );
           },
           (sings) {
-            ///setSounds
+            ///setSings
             sing = sings.first;
             setSing(sing: sing);
           },
         );
         return Either.right(
           sing,
+        );
+
+         */
+        return Either.left(
+          await _failureRepositoryImpl.setFailure(
+            FailuresEnum.unknown.name,
+          ),
         );
       }
     } catch (e) {

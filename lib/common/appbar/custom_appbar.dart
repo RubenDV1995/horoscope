@@ -9,7 +9,7 @@ import '../icon/custom_icon.dart';
 import '../title/custom_title.dart';
 import 'custom_tabbar.dart';
 
-class CustomAppbar extends StatelessWidget with PreferredSizeWidget {
+class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
   final IconData iconData;
   final String title;
 

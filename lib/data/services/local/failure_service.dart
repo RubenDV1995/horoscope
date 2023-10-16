@@ -1,5 +1,5 @@
-import '../../../domian/models/failure_model.dart';
 import '../../../utils/enums/failures.dart';
+import '../../models/failure_model.dart';
 
 class FailureService {
   FailureService();

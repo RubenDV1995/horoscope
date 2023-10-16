@@ -3,7 +3,7 @@ import 'package:liquid_swipe/PageHelpers/LiquidController.dart';
 
 import '../../../common/padding/custom_padding.dart';
 import '../../../constants/sizes.dart';
-import '../../../domian/models/onboarding_model.dart';
+import '../../../data/models/onboarding_model.dart';
 import '../../../utils/color/hex_color.dart';
 import 'content_onboarding_item.dart';
 import 'footer_onboarding_item.dart';

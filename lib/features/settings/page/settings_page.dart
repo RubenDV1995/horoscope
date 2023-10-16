@@ -4,7 +4,6 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import '../../../common/button/ corner_button/custom_ corner_button.dart';
 import '../../../common/pages/back_pages/custom_back_page.dart';
-import '../../../common/title/custom_title.dart';
 import '../../../constants/constants.dart';
 import '../../../constants/sizes.dart';
 import '../../../utils/launch/launch.dart';

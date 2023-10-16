@@ -6,7 +6,6 @@ import 'package:horoscopos/features/signs/page/sings_page.dart';
 import 'package:provider/provider.dart';
 
 import '../../../common/pages/ads/custom_scaffold_ads_page.dart';
-import '../../../common/pages/custom_defaul_page.dart';
 import '../../../constants/constants.dart';
 import '../../../data/services/remote/network_service.dart';
 import '../../offline/controller/network_controller.dart';

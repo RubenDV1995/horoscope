@@ -1,5 +1,5 @@
-import '../../domian/models/failure_model.dart';
 import '../../domian/repositories/failures_repository.dart';
+import '../models/failure_model.dart';
 import '../services/local/failure_service.dart';
 
 class FailureRepositoryImpl implements FailureRepository {

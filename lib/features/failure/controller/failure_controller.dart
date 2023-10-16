@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-import '../../../domian/models/failure_model.dart';
+import '../../../data/models/failure_model.dart';
 
 class FailureController extends ChangeNotifier {
 

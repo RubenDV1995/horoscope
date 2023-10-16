@@ -8,4 +8,5 @@ class Routes{
   static const settings = '/settings';
   static const onboarding = '/onboarding';
   static const sings = '/sings';
+  static const elements = '/elements';
 }

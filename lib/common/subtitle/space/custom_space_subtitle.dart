@@ -7,10 +7,12 @@ import '../custom_subtitle.dart';
 
 class CustomSpaceSubtitle extends StatelessWidget {
   final String title;
+  final double? size;
 
   const CustomSpaceSubtitle({
     required this.title,
     Key? key,
+    this.size,
   }) : super(key: key);
 
   @override
@@ -22,7 +24,7 @@ class CustomSpaceSubtitle extends StatelessWidget {
           padding: spacingXXS_4,
           child: CustomSubtitle(
             subtitle: title,
-            size: spacingS_12,
+            size: size ?? spacingS_12,
             color: MainColor.primaryWhite,
           ),
         ),

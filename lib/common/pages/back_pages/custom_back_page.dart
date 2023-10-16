@@ -1,4 +1,3 @@
-import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants/colors.dart';
@@ -31,15 +30,17 @@ class CustomBackPage extends StatelessWidget {
               Navigator.pop(context);
             },
             child: const CustomIcon(
-              iconData: FluentIcons.ios_arrow_ltr_24_filled,
+              iconData: Icons.arrow_back_ios_new_outlined,
               color: MainColor.primaryWhite,
             ),
           ),
         ),
-        body: CustomPadding(
-          typePadding: TypePadding.all,
-          padding: spacingXS_8,
-          child: body,
+        body: SingleChildScrollView(
+          child: CustomPadding(
+            typePadding: TypePadding.all,
+            padding: spacingXS_8,
+            child: body,
+          ),
         ),
       ),
     );

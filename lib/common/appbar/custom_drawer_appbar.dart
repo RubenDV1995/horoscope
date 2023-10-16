@@ -1,15 +1,9 @@
-import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 
-import '../../constants/colors.dart';
 import '../../constants/sizes.dart';
-import '../../features/settings/page/settings_page.dart';
-import '../../utils/navigator/navigator.dart';
-import '../icon/custom_icon.dart';
 import '../title/custom_title.dart';
-import 'custom_tabbar.dart';
 
-class CustomDrawerAppbar extends StatelessWidget with PreferredSizeWidget {
+class CustomDrawerAppbar extends StatelessWidget implements PreferredSizeWidget {
   final IconData? iconData;
   final String title;
 

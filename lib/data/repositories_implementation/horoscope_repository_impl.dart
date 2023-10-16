@@ -1,13 +1,15 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:horoscopos/data/repositories_implementation/failures_repository_impl.dart';
 import 'package:horoscopos/data/services/remote/horoscope_service.dart';
-import 'package:horoscopos/domian/models/failure_model.dart';
+import 'package:horoscopos/data/models/failure_model.dart';
 
-import 'package:horoscopos/domian/models/horoscope_model.dart';
+import 'package:horoscopos/data/models/horoscope_model.dart';
 
 import 'package:horoscopos/utils/either/either.dart';
 
+
 import '../../domian/repositories/horoscope_repository.dart';
+import '../models/sings_model.dart';
 
 class HoroscopeRepositoryImpl implements HoroscopeRepository {
   final HoroscopeService _horoscopeService;
@@ -23,8 +25,14 @@ class HoroscopeRepositoryImpl implements HoroscopeRepository {
         _failureRepositoryImpl = failureRepositoryImpl;
 
   @override
-  Future<Either<FailuresModel, Horoscope>> getHoroscope() async {
-    final result = await _horoscopeService.getHoroscope();
+  Future<Either<FailuresModel, Horoscope>> getHoroscope({
+    required Sing sing,
+    required String date,
+  }) async {
+    final result = await _horoscopeService.getHoroscope(
+      sing: sing.sing!,
+      date: date,
+    );
     return result.when(
       (failure) async => Either.left(
         await _failureRepositoryImpl.setFailure(failure.name),

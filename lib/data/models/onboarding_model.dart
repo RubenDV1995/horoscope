@@ -8,16 +8,16 @@ class OnboardingModel {
       onboarding = <Onboarding>[];
       json['onboarding'].forEach(
         (v) {
-          onboarding!.add(new Onboarding.fromJson(v));
+          onboarding!.add(Onboarding.fromJson(v));
         },
       );
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.onboarding != null) {
-      data['onboarding'] = this.onboarding!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (onboarding != null) {
+      data['onboarding'] = onboarding!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -41,7 +41,7 @@ class Onboarding {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['title'] = title;
     data['subtitle'] = subtitle;

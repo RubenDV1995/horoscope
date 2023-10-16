@@ -26,24 +26,28 @@ class Sings {
 class Sing {
   int? id;
   String? title;
+  String? sing;
   String? date;
   String? urlImage;
   String? urlImagePreview;
   bool? isNew;
   String? category;
 
-  Sing(
-      {this.id,
-        this.title,
-        this.date,
-        this.urlImage,
-        this.urlImagePreview,
-        this.isNew,
-        this.category});
+  Sing({
+    this.id,
+    this.title,
+    this.sing,
+    this.date,
+    this.urlImage,
+    this.urlImagePreview,
+    this.isNew,
+    this.category,
+  });
 
   Sing.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     title = json['title'] ?? lblTitle;
+    sing = json['sing'];
     date = json['date'];
     urlImage = json['urlImage'];
     urlImagePreview = json['urlImagePreview'];
@@ -55,6 +59,7 @@ class Sing {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
     data['title'] = title;
+    data['sing'] = sing;
     data['date'] = date;
     data['urlImage'] = urlImage;
     data['urlImagePreview'] = urlImagePreview;

@@ -2,13 +2,14 @@ import 'dart:convert';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
-import 'package:horoscopos/domian/models/sings_model.dart';
 
 import '../../../constants/constants.dart';
-import '../../../domian/models/app_config_model.dart';
 import '../../../utils/either/either.dart';
 import '../../../utils/enums/failures.dart';
 import '../../../utils/prints_logs/prints_logs.dart';
+import '../../models/app_config_model.dart';
+import '../../models/elements_model.dart';
+import '../../models/sings_model.dart';
 
 Map<String, dynamic> logs = {};
 
@@ -75,6 +76,35 @@ class RemoteConfigService {
           listSings = data.sing!;
           return Either.right(
             listSings,
+          );
+        } else {
+          return Either.left(
+            FailuresEnum.notConfigsFound,
+          );
+        }
+      } else {
+        return Either.left(
+          FailuresEnum.network,
+        );
+      }
+    } catch (e) {
+      return Either.left(
+        FailuresEnum.parseError,
+      );
+    }
+  }
+
+  Either<FailuresEnum, List<Element>> getEventElementsInfoJson() {
+    List<Element> listElements = [];
+    try {
+      final result = _firebaseRemoteConfig.getString(lblRemoteConfigElements);
+      if (result.isNotEmpty) {
+        Map<String, dynamic> valueMap = json.decode(result);
+        final data = Elements.fromJson(valueMap);
+        if (data.element.isNotEmpty) {
+          listElements = data.element;
+          return Either.right(
+            listElements,
           );
         } else {
           return Either.left(

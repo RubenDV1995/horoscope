@@ -5,12 +5,14 @@ class CustomCachedNetworkImage extends StatelessWidget {
   final String imageUrl;
   final double? width;
   final double? height;
+  final BoxShape? boxShape;
 
   const CustomCachedNetworkImage({
     required this.imageUrl,
     Key? key,
     this.width = 90.0,
     this.height = 90.0,
+    this.boxShape,
   }) : super(key: key);
 
   @override
@@ -21,7 +23,7 @@ class CustomCachedNetworkImage extends StatelessWidget {
         width: width,
         height: height,
         decoration: BoxDecoration(
-          shape: BoxShape.circle,
+          shape: boxShape ?? BoxShape.circle,
           image: DecorationImage(image: imageProvider, fit: BoxFit.cover),
         ),
       ),

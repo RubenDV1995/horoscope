@@ -1,4 +1,4 @@
-import '../../../domian/models/onboarding_model.dart';
+import '../../../data/models/onboarding_model.dart';
 import '../../../utils/either/either.dart';
 import '../../../utils/enums/failures.dart';
 import '../../datasources/onboarding/onboarding_datasource.dart';

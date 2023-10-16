@@ -1,7 +1,7 @@
 import 'package:horoscopos/data/services/http/http.dart';
 import 'package:horoscopos/utils/enums/failures.dart';
 
-import '../../../domian/models/horoscope_model.dart';
+import '../../../data/models/horoscope_model.dart';
 import '../../../utils/either/either.dart';
 
 class HoroscopeService {
@@ -9,15 +9,18 @@ class HoroscopeService {
 
   HoroscopeService(this._http);
 
-  Future<Either<FailuresEnum, Horoscope>> getHoroscope() async {
+  Future<Either<FailuresEnum, Horoscope>> getHoroscope({
+    required String sing,
+    required String date,
+  }) async {
     final result = await _http.request(
       '',
       userApiKey: false,
       method: HttpMethod.post,
       body: {
-        "date": "2023-08-04",
+        "date": date,
         "lang": "es",
-        "sign": "Libra",
+        "sign": sing,
       },
       onSuccess: (responseBody) {
         final json = responseBody;

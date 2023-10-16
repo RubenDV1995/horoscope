@@ -9,6 +9,7 @@ class CustomSubtitle extends StatelessWidget {
   final int? maxLines;
   final TextOverflow? overflow;
   final Color? color;
+  final FontWeight? fontWeight;
 
   const CustomSubtitle({
     required this.subtitle,
@@ -17,6 +18,7 @@ class CustomSubtitle extends StatelessWidget {
     this.maxLines,
     this.overflow,
     this.color,
+    this.fontWeight,
   }) : super(key: key);
 
   @override
@@ -24,17 +26,19 @@ class CustomSubtitle extends StatelessWidget {
     return Text(
       subtitle,
       maxLines: maxLines ?? 6,
-      overflow: overflow ?? TextOverflow.fade,
+      overflow: overflow ?? TextOverflow.ellipsis,
       style: size != null
           ? Theme.of(context).textTheme.headlineMedium?.copyWith(
                 fontSize: size,
                 color: color ?? MainColor.primaryWhite,
                 height: 1.3,
+                fontWeight: fontWeight ?? FontWeight.normal,
               )
           : Theme.of(context).textTheme.headlineMedium?.copyWith(
                 fontSize: spacingS_12,
                 color: color ?? MainColor.primaryWhite,
                 height: 1.5,
+                fontWeight: fontWeight ?? FontWeight.normal,
               ),
     );
   }

@@ -1,10 +1,9 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-
-import '../../domian/models/failure_model.dart';
-import '../../domian/models/onboarding_model.dart';
 import '../../domian/repositories/onboarding_repository.dart';
 import '../../utils/either/either.dart';
 import '../../utils/enums/failures.dart';
+import '../models/failure_model.dart';
+import '../models/onboarding_model.dart';
 import '../services/local/onboarding_service.dart';
 import 'failures_repository_impl.dart';
 

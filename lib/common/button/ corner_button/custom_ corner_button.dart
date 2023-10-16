@@ -1,4 +1,3 @@
-import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants/colors.dart';
@@ -41,12 +40,10 @@ class CustomCornerButton extends StatelessWidget {
           ),
           tileColor: MainColor.primarySpaceCadet,
           trailing: const CustomIcon(
-            iconData: FluentIcons.ios_arrow_rtl_24_filled,
+            iconData: Icons.arrow_back_ios_new_outlined,
             color: MainColor.primaryWhite,
           ),
-          leading: iconData != null
-              ? Icon(iconData)
-              : const SizedBox.shrink(),
+          leading: iconData != null ? Icon(iconData) : const SizedBox.shrink(),
           shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
               topRight: Radius.circular(spacingM_16),

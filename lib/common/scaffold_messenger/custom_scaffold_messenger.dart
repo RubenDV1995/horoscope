@@ -8,6 +8,9 @@ ScaffoldFeatureController<SnackBar, SnackBarClosedReason>
   return ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
       content: Text(title),
+      duration: const Duration(
+        seconds: 1,
+      ),
     ),
   );
 }

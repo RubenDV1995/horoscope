@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:horoscopos/features/home/controller/home_controller.dart';
 import 'package:provider/provider.dart';
 
 import '../../../common/bottom_sheet/custom_bottom_sheet.dart';
@@ -9,7 +10,7 @@ import '../../../constants/colors.dart';
 import '../../../constants/constants.dart';
 import '../../../constants/paths.dart';
 import '../../../constants/sizes.dart';
-import '../../../domian/models/app_config_model.dart';
+import '../../../data/models/app_config_model.dart';
 import '../../../domian/repositories/app_config_repository.dart';
 import '../../../domian/repositories/onboarding_repository.dart';
 import '../../../routes/app_routes.dart';
@@ -17,6 +18,7 @@ import '../../../utils/enums/app.dart';
 import '../../../utils/info/app_info.dart';
 import '../../../utils/launch/launch.dart';
 import '../../../utils/navigator/navigator.dart';
+import '../widgets/content_update_modal.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -39,6 +41,7 @@ class Splash extends StatefulWidget {
 class _SplashState extends State<Splash> {
   late AppConfigRepository _appConfigRepository;
   late OnboardingRepository _onboardingRepository;
+  late HomeController _homeController;
 
   @override
   void initState() {
@@ -53,6 +56,10 @@ class _SplashState extends State<Splash> {
       listen: false,
     );
     _onboardingRepository = Provider.of<OnboardingRepository>(
+      context,
+      listen: false,
+    );
+    _homeController = Provider.of<HomeController>(
       context,
       listen: false,
     );
@@ -100,6 +107,9 @@ class _SplashState extends State<Splash> {
       (app) => {
         if (formatAppVersion(appVersion: app.appVersion!) <= appVersionLocal)
           {
+            _homeController.setAppVersion(
+              app.appVersion ?? lblNotData,
+            ),
             goTo(
               routeName: Routes.home,
               context: context,
@@ -109,8 +119,7 @@ class _SplashState extends State<Splash> {
           {
             _updateApp(
               context: context,
-              changes: app.changes,
-              urlStore: app.urlStore,
+              app: app,
             ),
           }
       },
@@ -119,26 +128,27 @@ class _SplashState extends State<Splash> {
 
   void _updateApp({
     required BuildContext context,
-    required List<Changes>? changes,
-    required String? urlStore,
+    required App app,
   }) {
     late String currentChange = '';
-    if (changes != null) {
-      for (var element in changes) {
-        currentChange = '$currentChange \n ○ ${element.title!}';
+    if (app.changes != null) {
+      for (var element in app.changes!) {
+        currentChange = '$currentChange ○ ${element.title!}\n';
       }
     }
 
     showCustomBottomSheet(
       context,
-      lblTitleUpdateApp,
+      lblUpdateApp,
       () {
         _launchUrl(
-          url: urlStore!,
+          url: app.urlStore!,
         );
       },
-      lblUpdateApp,
-      '$lblContentUpdateApp \n$currentChange',
+      lblUpdate,
+      const ContentUpdateModal(),
+      currentChange,
+      app.date,
     );
   }
 
@@ -175,7 +185,7 @@ class _SplashState extends State<Splash> {
               ),
               const CustomTitle(
                 title: titleApp,
-                size: spacingXXL_40,
+                size: spacingL_28,
               ),
             ],
           ),

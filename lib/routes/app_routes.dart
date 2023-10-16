@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:horoscopos/features/element/page/element_page.dart';
 import 'package:horoscopos/features/signs/page/sings_page.dart';
 
 import '../features/home/page/home_page.dart';
@@ -13,5 +14,6 @@ Map<String, Widget Function(BuildContext)> get appRoutes {
     Routes.settings: (context) => const SettingsScreen(),
     Routes.onboarding: (context) => const OnboardingPage(),
     Routes.sings: (context) => const SingsPage(),
+    Routes.elements: (context) => const ElementPage(),
   };
 }

@@ -1,12 +1,8 @@
-import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:horoscopos/common/appbar/custom_drawer_appbar.dart';
 
 import '../../../constants/constants.dart';
-import '../../../constants/sizes.dart';
-import '../../appbar/custom_appbar.dart';
 import '../../drawer/custom_drawer.dart';
-import '../../floating_action_button/custom_floating_action_button.dart';
 import '../../gradient/custom_gradient.dart';
 import '../../padding/custom_padding.dart';
 

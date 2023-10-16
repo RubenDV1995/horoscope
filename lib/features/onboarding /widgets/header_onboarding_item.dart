@@ -24,10 +24,13 @@ class HeaderOnboardingItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
+          const SizedBox(
+            height: spacingXS_8,
+          ),
           if (index != (length - 1))
             InkWell(
               onTap: onTap,
-              child: CustomSubtitle(
+              child: const CustomSubtitle(
                 subtitle: lblSkip,
                 size: spacingS_12,
               ),

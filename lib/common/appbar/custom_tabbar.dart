@@ -5,7 +5,7 @@ import '../../constants/colors.dart';
 import '../../constants/constants.dart';
 import '../../features/home/controller/home_controller.dart';
 
-class CustomTabBar extends StatelessWidget with PreferredSizeWidget {
+class CustomTabBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomTabBar({Key? key}) : super(key: key);
 
   @override

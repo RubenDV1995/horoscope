@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../constants/sizes.dart';
+
 class CustomListView extends StatelessWidget {
   final int itemCount;
   final Widget? Function(BuildContext, int) itemBuilder;
@@ -12,12 +14,17 @@ class CustomListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return ListView.separated(
       shrinkWrap: true,
       scrollDirection: Axis.vertical,
       physics: const NeverScrollableScrollPhysics(),
       itemCount: itemCount,
       itemBuilder: itemBuilder,
+      separatorBuilder: (BuildContext context, int index) {
+        return const SizedBox(
+          height: spacingS_12,
+        );
+      },
     );
   }
 }

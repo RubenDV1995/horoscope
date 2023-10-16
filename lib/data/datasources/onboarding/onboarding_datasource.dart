@@ -2,25 +2,25 @@ final onboardingJson = {
   "onboarding": [
     {
       "id": 1,
-      "title": "Serene Sounds",
+      "title": "Horóscopo Diario",
       "subtitle":
-          "Relax and sleep better with our selection of relaxing sounds.",
+          "¡Bienvenido a Mi Horóscopo Diario! Descubre tu destino cada día con predicciones precisas y emocionantes. \n¿Qué maravillas te esperan hoy?",
       "img": "assets/images/png/logo-min.png",
-      "color": "#2F1142"
+      "color": "#121212"
     },
     {
       "id": 2,
-      "title": "Total serenity",
-      "subtitle": "Discover a variety of techniques and exercises that will help you achieve total serenity",
+      "title": "Descubre tu elemento",
+      "subtitle": "Conoce tu signo como nunca antes. Cada horóscopo viene con su elemento representativo, conectando contigo a un nivel más profundo y personal.",
       "img": "assets/images/png/logo-min.png",
-      "color": "#2D1B40"
+      "color": "#1E1E1E"
     },
     {
       "id": 3,
-      "title": "Quiet Time",
-      "subtitle": "Enjoy a perfect relaxation time with our integrated timer. Set the duration of your sessions and let yourself be carried away by peace of mind without worries.",
+      "title": "Agrega tu signo  a favoritos",
+      "subtitle": "Personaliza tu experiencia. Guarda tus signos favoritos y recibe notificaciones para estar siempre al tanto de lo que las estrellas tienen preparado para ti.",
       "img": "assets/images/png/logo-min.png",
-      "color": "#231328"
+      "color": "#272727"
     }
   ]
 };

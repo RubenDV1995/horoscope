@@ -29,7 +29,7 @@ class CustomPadding extends StatelessWidget {
     if (typePadding == TypePadding.all) {
       return Padding(
         padding: EdgeInsets.all(
-          padding != null ? padding! : spacingXS_8,
+          padding != null ? padding! : spacingM_16,
         ),
         child: child,
       );
@@ -37,7 +37,7 @@ class CustomPadding extends StatelessWidget {
     if (typePadding == TypePadding.horizontal) {
       return Padding(
         padding: EdgeInsets.symmetric(
-          horizontal: padding != null ? padding! : spacingXS_8,
+          horizontal: padding != null ? padding! : spacingM_16,
         ),
         child: child,
       );
@@ -45,17 +45,17 @@ class CustomPadding extends StatelessWidget {
     if (typePadding == TypePadding.vertical) {
       return Padding(
         padding: EdgeInsets.symmetric(
-          vertical: padding != null ? padding! : spacingXS_8,
+          vertical: padding != null ? padding! : spacingM_16,
         ),
         child: child,
       );
     }
     return Padding(
       padding: EdgeInsets.only(
-        left: typePadding == TypePadding.left ? spacingXS_8 : 0,
-        top: typePadding == TypePadding.top ? spacingXS_8 : 0,
-        bottom: typePadding == TypePadding.bottom ? spacingXS_8 : 0,
-        right: typePadding == TypePadding.right ? spacingXS_8 : 0,
+        left: typePadding == TypePadding.left ? spacingM_16 : 0,
+        top: typePadding == TypePadding.top ? spacingM_16 : 0,
+        bottom: typePadding == TypePadding.bottom ? spacingM_16 : 0,
+        right: typePadding == TypePadding.right ? spacingM_16 : 0,
       ),
       child: child,
     );

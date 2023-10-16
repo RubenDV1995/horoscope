@@ -10,9 +10,9 @@ class MainColor {
   static const Color accentColor1000 = Color(0xFFFF5C4D);
   static const Color bgColor100 = Color(0xFF222222);
   static const Color primarySpaceCadet = Color(0xFF2C2C2C);
-  static const Color secondaryCharcoal = Color(0xff545454);
+  static const Color secondaryCharcoal = Color(0xffdedede);
   static const Color textCharcoal1 = Color(0xFF343c46);
   static const Color primaryWhite = Color(0xFFFFFFFF);
   static const Color stateGreen = Color(0xFF66bc6b);
-  static const Color stateRed = Color(0xFFd95a3a);
+  static const Color stateRed = Color(0xffd94d3a);
 }

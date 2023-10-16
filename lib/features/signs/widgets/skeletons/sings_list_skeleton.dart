@@ -12,11 +12,11 @@ class SingsListSkeleton extends StatelessWidget {
       padding: const EdgeInsets.all(spacingXS_8),
       gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
         maxCrossAxisExtent: 200,
-        childAspectRatio: 4 / 5,
+        childAspectRatio: 4 / 4,
         crossAxisSpacing: 15,
         mainAxisSpacing: 15,
       ),
-      itemCount: 6,
+      itemCount: 12,
       itemBuilder: (context, index) {
         return const SkeletonAvatar();
       },

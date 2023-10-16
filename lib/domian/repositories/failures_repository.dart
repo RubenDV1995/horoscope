@@ -1,4 +1,4 @@
-import '../models/failure_model.dart';
+import '../../data/models/failure_model.dart';
 
 abstract class FailureRepository {
   Future<FailuresModel> setFailure(String failure);

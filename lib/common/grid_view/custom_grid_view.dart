@@ -4,12 +4,14 @@ import '../../constants/sizes.dart';
 
 class CustomGridView extends StatelessWidget {
   final int itemCount;
+  final double? aspecRatio;
   final Widget? Function(BuildContext, int) itemBuilder;
 
   const CustomGridView({
     required this.itemCount,
     required this.itemBuilder,
     Key? key,
+    this.aspecRatio,
   }) : super(key: key);
 
   @override
@@ -19,9 +21,9 @@ class CustomGridView extends StatelessWidget {
       scrollDirection: Axis.vertical,
       physics: const NeverScrollableScrollPhysics(),
       padding: const EdgeInsets.all(spacingXS_8),
-      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
         maxCrossAxisExtent: 200,
-        childAspectRatio: 4 / 4,
+        childAspectRatio: (aspecRatio) ?? (4 / 4),
         crossAxisSpacing: 15,
         mainAxisSpacing: 15,
       ),

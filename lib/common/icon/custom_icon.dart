@@ -6,11 +6,13 @@ import '../../constants/sizes.dart';
 class CustomIcon extends StatelessWidget {
   final IconData iconData;
   final Color? color;
+  final double? size;
 
   const CustomIcon({
     required this.iconData,
     Key? key,
     this.color,
+    this.size,
   }) : super(key: key);
 
   @override
@@ -18,7 +20,7 @@ class CustomIcon extends StatelessWidget {
     return Icon(
       iconData,
       color: color ?? MainColor.primaryColor,
-      size: spacingM_20,
+      size: size ?? spacingL_24,
     );
   }
 }

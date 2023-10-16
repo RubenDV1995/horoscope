@@ -1,9 +1,8 @@
-
-import '../../domian/models/app_config_model.dart';
-import '../../domian/models/failure_model.dart';
 import '../../domian/repositories/app_config_repository.dart';
 import '../../utils/either/either.dart';
 import '../../utils/enums/app.dart';
+import '../models/app_config_model.dart';
+import '../models/failure_model.dart';
 import '../services/firebase/remote_config_service.dart';
 import 'failures_repository_impl.dart';
 

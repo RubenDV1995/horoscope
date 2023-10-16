@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 
-import '../../../domian/models/onboarding_model.dart';
+import '../../../data/models/onboarding_model.dart';
 
 class OnboardingController extends ChangeNotifier{
   late bool _isLoadingOnboarding = true;

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../common/subtitle/custom_subtitle.dart';
 import '../../../common/title/custom_title.dart';
 import '../../../constants/sizes.dart';
-import '../../../domian/models/onboarding_model.dart';
+import '../../../data/models/onboarding_model.dart';
 
 class ContentOnboardingItem extends StatelessWidget {
   final Onboarding onboarding;

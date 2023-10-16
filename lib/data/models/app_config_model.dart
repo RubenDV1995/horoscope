@@ -28,15 +28,24 @@ class App {
   String? appVersion;
   bool? required;
   String? urlStore;
+  String? date;
   List<Changes>? changes;
 
-  App({this.id, this.appVersion, this.required, this.urlStore, this.changes});
+  App({
+    this.id,
+    this.appVersion,
+    this.required,
+    this.urlStore,
+    this.date,
+    this.changes,
+  });
 
   App.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     appVersion = json['appVersion'];
     required = json['required'];
     urlStore = json['urlStore'];
+    date = json['date'];
     if (json['changes'] != null) {
       changes = <Changes>[];
       json['changes'].forEach(
@@ -53,6 +62,7 @@ class App {
     data['appVersion'] = appVersion;
     data['required'] = required;
     data['urlStore'] = urlStore;
+    data['date'] = date;
     if (changes != null) {
       data['changes'] = changes!.map((v) => v.toJson()).toList();
     }
